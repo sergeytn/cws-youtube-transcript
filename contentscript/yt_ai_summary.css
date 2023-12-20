@@ -127,35 +127,52 @@
     justify-content: left;
     align-items: center;
     gap: 8px;
-    padding-bottom: 8px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
     border: 0;
     font-size: 12px;
+    overflow-x:auto;
 }
 
-.yt_ai_summary_text::-webkit-scrollbar,
-.yt_ai_summary_lang_select::-webkit-scrollbar {
+.yt_ai_summary_text::-webkit-scrollbar {
     width: 6px;
     border-radius: 4px;
     background-color: #E5DFDF;
 }
 
-.yt_ai_summary_text::-webkit-scrollbar-track,
+.yt_ai_summary_text::-webkit-scrollbar-track {
+    background: none;
+}
+
+.yt_ai_summary_text::-webkit-scrollbar-thumb {
+    background: #FC7D00;
+    border-radius: 4px;
+}
+
+.yt_ai_summary_text::-webkit-scrollbar-thumb:hover {
+    background: #FC7D00;
+    border-radius: 4px;
+}
+
+.yt_ai_summary_lang_select::-webkit-scrollbar {
+    height: 6px;
+    border-radius: 4px;
+    background-color: #EFEFEF;
+}
+
 .yt_ai_summary_lang_select::-webkit-scrollbar-track {
     background: none;
 }
 
-.yt_ai_summary_text::-webkit-scrollbar-thumb,
 .yt_ai_summary_lang_select::-webkit-scrollbar-thumb {
-    background: #FC7D00;
+    background: #E0D6D6;
     border-radius: 4px;
 }
 
-.yt_ai_summary_text::-webkit-scrollbar-thumb:hover,
 .yt_ai_summary_lang_select::-webkit-scrollbar-thumb:hover {
-    background: #FC7D00;
+    background: #E0D6D6;
     border-radius: 4px;
 }
-
 
 .yt_ai_summary_lang_select button {
     display: flex;
