@@ -16,8 +16,13 @@
     cursor: pointer;
     background-color: #FC7D00;
     color: #fff;
-    padding: 7px 15px 5px 15px;
-    border-radius: 10px 10px 0 0;
+    padding: 7px 15px 7px 15px;
+    border-radius: 10px;
+}
+
+.yt_ai_summary_header .yt-logo {
+    position: relative;
+    top: 2px;
 }
 
 .yt_ai_summary_header_actions {
@@ -193,3 +198,4 @@
     margin-right: 16px;
     font-size: 14px;
 }
+

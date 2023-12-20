@@ -11119,7 +11119,7 @@ function insertSummaryBtn() {
         document.querySelector("#secondary.style-scope.ytd-watch-flexy").insertAdjacentHTML("afterbegin", `
         <div class="yt_ai_summary_container">
             <div id="yt_ai_summary_header" class="yt_ai_summary_header">
-                <a href="#" target="_blank" style="width: 24px;height: 24px;">
+                <a href="#" target="_blank" class="yt-logo">
 					<svg width="32" viewBox="0 0 460 336" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M450.388 52.5717C445.097 31.879 429.51 15.5806 409.718 10.0487C373.846 3.96287e-06 230 0 230 0C230 0 86.1544 3.96287e-06 50.2802 10.0498C30.4891 15.5816 14.9021 31.879 9.61204 52.5727C-9.53679e-07 90.0801 0 168.339 0 168.339C0 168.339 -9.53679e-07 246.599 9.61204 284.106C14.9021 304.799 30.4891 320.418 50.2802 325.951C86.1544 336 230 336 230 336C230 336 373.846 336 409.718 325.95C429.51 320.417 445.097 304.798 450.388 284.105C460 246.598 460 168.338 460 168.338C460 168.338 460 90.0801 450.388 52.5717Z" fill="url(#paint0_linear_93_37)"/>
 					<path d="M60.999 236.793V100L181.225 168.398L60.999 236.793Z" fill="white"/>
@@ -11200,7 +11200,7 @@ function insertSummaryBtn() {
             const prompt = copyTranscriptAndPrompt();
             setTimeout(() => {
                 chrome.runtime.sendMessage({ message: "setPrompt", prompt: prompt });
-                window.open("https://chat.openai.com/chat?ref=yt-transcript", "_blank");
+                window.open("https://chat.openai.com/chat?ref=ytrans", "_blank");
             }, 500);
         })
 
@@ -11386,6 +11386,7 @@ function waitForElm(selector) {
 
 let oldHref = "";
 
+
 window.onload = async () => {
         
     if (window.location.hostname === "www.youtube.com") {
@@ -11408,10 +11409,43 @@ window.onload = async () => {
     }
 
     if (window.location.hostname === "chat.openai.com") {
+        const promptArea = document.querySelector('#prompt-textarea');
+        let sendBtn = document.querySelector('[data-testid="send-button"]');
+        if (!sendBtn) sendBtn = promptArea.parentNode.querySelector('button');
+
+        if (promptArea && sendBtn && window.location.search === "?ref=ytrans") {
+            chrome.runtime.sendMessage({ message: "getPrompt" }, async (response) => {
+                console.log(response, promptArea, sendBtn);
+                console.log(response.prompt);
+
+                if (!response.prompt) {
+                    console.log('return');
+                    return;
+                }
+
+                setTimeout(() => {
+                    promptArea.value = response.prompt;
+                    promptArea.style.height = promptArea.scrollHeight + "px",
+                    promptArea.focus();
+                    promptArea.dispatchEvent(new Event("input", { bubbles: true }));
+
+                    sendBtn.disabled = false;
+                    sendBtn.click();
+
+                    setTimeout(() => {
+                        const downBtn = document.querySelector('[role="presentation"] button.cursor-pointer');
+                        console.log(downBtn);
+                        if (!downBtn) return;
+                        downBtn.click();
+                    }, 2000);
+                }, 1500);
+            });
+        }
+        /*
         if (document.getElementsByTagName("textarea")[0]) {
             document.getElementsByTagName("textarea")[0].focus();
-            // If search query is "?ref=yt-transcript"
-            if (window.location.search === "?ref=yt-transcript") {
+            // If search query is "?ref=ytrans"
+            if (window.location.search === "?ref=ytrans") {
                 // get prompt from background.js
                 chrome.runtime.sendMessage({ message: "getPrompt" }, (response) => {
                     document.getElementsByTagName("textarea")[0].value = response.prompt;
@@ -11422,6 +11456,7 @@ window.onload = async () => {
                 });
             }
         }
+        */
     }
     
 }
