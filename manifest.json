@@ -1,0 +1,60 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 3,
+  "version": "1.0.3",
+  "default_locale": "en",
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDesc__",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": "assests/icon 128.png"
+  },
+  "icons": {
+    "16": "assests/icon 16.png",
+    "32": "assests/icon 32.png",
+    "64": "assests/icon 64.png",
+    "128": "assests/icon 128.png"
+  },
+  "host_permissions": [ "*://youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": [
+
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "tabs",
+    "notifications"
+
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assests/logo.png",
+        "assests/Vector.svg",
+        "assests/logo.svg",
+        "assests/notranscript.svg",
+        "assests/loader1.svg",
+        "assests/loader2.svg",
+        "assests/loader3.svg",
+        "assests/copyIcon.svg",
+        "assests/star.svg",
+        "assests/info.svg"
+      ],
+      "matches": [
+        "https://www.youtube.com/*"
+      ]
+    }
+  ]
+}
