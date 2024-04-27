@@ -1,32 +1,17 @@
-/******/ (() => { // webpackBootstrap
-/******/ 	var __webpack_modules__ = ({
+(() => {
+var __webpack_modules__ = ({
 
-/***/ 755:
-/***/ (function(module, exports) {
+755:
+(function(module, exports) {
 
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery JavaScript Library v3.7.1
- * https://jquery.com/
- *
- * Copyright OpenJS Foundation and other contributors
- * Released under the MIT license
- * https://jquery.org/license
- *
- * Date: 2023-08-28T13:37Z
- */
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 ( function( global, factory ) {
 
 	"use strict";
 
 	if (  true && typeof module.exports === "object" ) {
 
-		// For CommonJS and CommonJS-like environments where a proper `window`
-		// is present, execute the factory and get jQuery.
-		// For environments that do not have a `window` with a `document`
-		// (such as Node.js), expose a factory as module.exports.
-		// This accentuates the need for the creation of a real `window`.
-		// e.g. var jQuery = require("jquery")(window);
-		// See ticket trac-14549 for more info.
+
 		module.exports = global.document ?
 			factory( global, true ) :
 			function( w ) {
@@ -10941,7 +10926,7 @@ async function getTranscriptHTML(link, videoId) {
       const hhmmss = convertIntToHms(t);
       return  `<div class="yt_ai_summary_transcript_text_segment">
                   <div><a class="yt_ai_summary_transcript_text_timestamp" style="padding-top: 16px !important;" href="/watch?v=${videoId}&t=${t}s" target="_blank" data-timestamp-href="/watch?v=${videoId}&t=${t}s" data-start-time="${t}">${hhmmss}</a></div>
-                  <div class="yt_ai_summary_transcript_text" data-start-time="${t}">${obj.text}</div>
+                  <div class="yt_ai_summary_transcript_text" id="yt_ai_summary_transcript_text" data-start-time="${t}">${obj.text}</div>
               </div>`
   }).join("");
 
@@ -11118,15 +11103,15 @@ function insertSummaryBtn() {
         // Place Script Div
         document.querySelector("#secondary.style-scope.ytd-watch-flexy").insertAdjacentHTML("afterbegin", `
         <div class="yt_ai_summary_container">
-            <div id="yt_ai_summary_header" class="yt_ai_summary_header">
+            <div id="yt_ai_summary_header" class="yt_ai_summary_header">	
                 <a href="#" target="_blank" class="yt-logo">
 					<svg width="32" viewBox="0 0 460 336" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M450.388 52.5717C445.097 31.879 429.51 15.5806 409.718 10.0487C373.846 3.96287e-06 230 0 230 0C230 0 86.1544 3.96287e-06 50.2802 10.0498C30.4891 15.5816 14.9021 31.879 9.61204 52.5727C-9.53679e-07 90.0801 0 168.339 0 168.339C0 168.339 -9.53679e-07 246.599 9.61204 284.106C14.9021 304.799 30.4891 320.418 50.2802 325.951C86.1544 336 230 336 230 336C230 336 373.846 336 409.718 325.95C429.51 320.417 445.097 304.798 450.388 284.105C460 246.598 460 168.338 460 168.338C460 168.338 460 90.0801 450.388 52.5717Z" fill="url(#paint0_linear_93_37)"/>
-					<path d="M60.999 236.793V100L181.225 168.398L60.999 236.793Z" fill="white"/>
-					<rect x="232" y="97" width="171" height="15" rx="7.5" fill="white"/>
-					<rect x="232" y="139" width="171" height="15" rx="7.5" fill="white"/>
-					<rect x="232" y="181" width="171" height="15" rx="7.5" fill="white"/>
-					<rect x="232" y="223" width="84" height="15" rx="7.5" fill="white"/>
+					<path d="M450.388 52.5717C445.097 31.879 429.51 15.5806 409.718 10.0487C373.846 3.96287e-06 230 0 230 0C230 0 86.1544 3.96287e-06 50.2802 10.0498C30.4891 15.5816 14.9021 31.879 9.61204 52.5727C-9.53679e-07 90.0801 0 168.339 0 168.339C0 168.339 -9.53679e-07 246.599 9.61204 284.106C14.9021 304.799 30.4891 320.418 50.2802 325.951C86.1544 336 230 336 230 336C230 336 373.846 336 409.718 325.95C429.51 320.417 445.097 304.798 450.388 284.105C460 246.598 460 168.338 460 168.338C460 168.338 460 90.0801 450.388 52.5717Z" fill="white"/>
+					<path d="M60.999 236.793V100L181.225 168.398L60.999 236.793Z" fill="#FF5E3B"/>
+					<rect x="232" y="97" width="171" height="15" rx="7.5" fill="#FF5E3B"/>
+					<rect x="232" y="139" width="171" height="15" rx="7.5" fill="#FF5E3B"/>
+					<rect x="232" y="181" width="171" height="15" rx="7.5" fill="#FF5E3B"/>
+					<rect x="232" y="223" width="84" height="15" rx="7.5" fill="#FF5E3B"/>
 					<defs>
 					<linearGradient id="paint0_linear_93_37" x1="230" y1="0" x2="230" y2="336" gradientUnits="userSpaceOnUse">
 					<stop stop-color="#FF0000"/>
@@ -11135,38 +11120,49 @@ function insertSummaryBtn() {
 					</defs>
 					</svg>
                 </a>
-                <p class="yt_ai_summary_header_text">YOUTUBE TRANSCRIPT</p>
-                <div class="yt_ai_summary_header_actions">
-                    <div id="yt_ai_summary_header_summary" class="yt_ai_summary_header_action_btn yt-summary-hover-el yt_ai_summary_icon" data-hover-label="View AI Summary\n(Open New Tab)">
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M20.4316 10.1814C20.7051 9.33773 20.7519 8.43698 20.5673 7.56952C20.3828 6.70206 19.9732 5.89841 19.3799 5.23923C18.7866 4.58005 18.0303 4.08853 17.187 3.81399C16.3437 3.53945 15.443 3.49156 14.5753 3.67512C13.9828 3.01454 13.2267 2.52175 12.3831 2.24638C11.5396 1.97101 10.6383 1.92278 9.7702 2.10655C8.90206 2.29031 8.09768 2.69959 7.43805 3.29315C6.77842 3.88672 6.28684 4.64361 6.01282 5.48762C5.14377 5.66999 4.33818 6.07829 3.67728 6.67133C3.01638 7.26438 2.52354 8.0212 2.24845 8.86549C1.97336 9.70978 1.92575 10.6117 2.11042 11.4802C2.2951 12.3488 2.70552 13.1533 3.30032 13.8126C3.07846 14.4869 3.00273 15.2008 3.07816 15.9066C3.1536 16.6125 3.37847 17.2942 3.73782 17.9064C4.27089 18.8322 5.08384 19.5651 6.05977 19.9997C7.03569 20.4343 8.12431 20.5483 9.16907 20.3251C9.6399 20.8539 10.2177 21.2767 10.8641 21.5654C11.5106 21.8542 12.211 22.0023 12.9191 22.0001C13.989 22.0001 15.0314 21.6606 15.8962 21.0305C16.7609 20.4005 17.4036 19.5123 17.7316 18.4939C18.4262 18.351 19.0824 18.062 19.6567 17.646C20.2311 17.2301 20.7104 16.6967 21.0628 16.0814C21.5927 15.1569 21.817 14.0886 21.7037 13.029C21.5903 11.9695 21.1451 10.9728 20.4316 10.1814ZM12.9316 20.6939C12.0546 20.6938 11.2054 20.3864 10.5316 19.8251L10.6503 19.7564L14.6316 17.4564C14.7342 17.4018 14.8196 17.3196 14.8781 17.2191C14.9366 17.1187 14.966 17.0038 14.9628 16.8876V11.2626L16.6441 12.2376C16.6529 12.2412 16.6605 12.2472 16.6661 12.2549C16.6716 12.2627 16.6748 12.2719 16.6753 12.2814V16.9314C16.677 17.4259 16.5808 17.9159 16.3923 18.3732C16.2038 18.8304 15.9267 19.2458 15.577 19.5955C15.2273 19.9452 14.8118 20.2223 14.3546 20.4108C13.8974 20.5993 13.4074 20.6955 12.9128 20.6939H12.9316ZM4.86282 17.2564C4.4287 16.5 4.27178 15.6159 4.41907 14.7564L4.53782 14.8251L8.51907 17.1251C8.61408 17.18 8.72186 17.2089 8.83157 17.2089C8.94128 17.2089 9.04905 17.18 9.14407 17.1251L14.0128 14.3189V16.2501C14.0167 16.2579 14.0187 16.2664 14.0187 16.2751C14.0187 16.2838 14.0167 16.2923 14.0128 16.3001L9.98782 18.6251C9.56146 18.8719 9.09067 19.0322 8.60233 19.097C8.11399 19.1617 7.61767 19.1297 7.14174 19.0025C6.66581 18.8754 6.21958 18.6558 5.82855 18.3562C5.43753 18.0566 5.10937 17.6828 4.86282 17.2564ZM3.81282 8.58137C4.25703 7.81796 4.95645 7.23585 5.78782 6.93762V11.6689C5.78462 11.7828 5.81263 11.8954 5.86881 11.9945C5.92499 12.0937 6.0072 12.1756 6.10657 12.2314L10.9503 15.0251L9.26907 16.0001C9.25083 16.0063 9.23106 16.0063 9.21282 16.0001L5.18782 13.6751C4.32883 13.1783 3.70178 12.3612 3.44406 11.4029C3.18633 10.4447 3.31893 9.42331 3.81282 8.56262V8.58137ZM17.6441 11.7939L12.7816 8.96887L14.4628 8.00012C14.4711 7.99448 14.4809 7.99146 14.4909 7.99146C14.501 7.99146 14.5108 7.99448 14.5191 8.00012L18.5441 10.3251C19.1587 10.6811 19.6596 11.2043 19.9885 11.8339C20.3174 12.4635 20.4607 13.1735 20.4018 13.8813C20.3428 14.5892 20.0841 15.2657 19.6556 15.8322C19.2272 16.3988 18.6466 16.8319 17.9816 17.0814V12.3501C17.9779 12.2362 17.9449 12.1252 17.8858 12.0277C17.8267 11.9303 17.7434 11.8497 17.6441 11.7939ZM19.3191 9.29387L19.2003 9.21887L15.2253 6.90637C15.1267 6.84553 15.0131 6.81331 14.8972 6.81331C14.7813 6.81331 14.6677 6.84553 14.5691 6.90637L9.70657 9.71262V7.75012C9.70163 7.74157 9.69903 7.73187 9.69903 7.72199C9.69903 7.71212 9.70163 7.70242 9.70657 7.69387L13.7378 5.37512C14.3547 5.01964 15.0599 4.8471 15.7712 4.87766C16.4825 4.90822 17.1704 5.14063 17.7545 5.54771C18.3385 5.95479 18.7947 6.51972 19.0695 7.17646C19.3444 7.83321 19.4266 8.55462 19.3066 9.25637L19.3191 9.29387ZM8.78782 12.7189L7.10032 11.7501C7.08443 11.7376 7.07339 11.7199 7.06907 11.7001V7.06262C7.0691 6.34996 7.2722 5.65206 7.65458 5.05068C8.03697 4.44929 8.5828 3.96931 9.22815 3.66697C9.87349 3.36463 10.5916 3.25244 11.2984 3.34354C12.0053 3.43464 12.6715 3.72527 13.2191 4.18137L13.1128 4.25012L9.11907 6.55012C9.01641 6.60472 8.93103 6.68688 8.87251 6.78736C8.81399 6.88783 8.78466 7.00264 8.78782 7.11887V12.7189ZM9.70032 10.7501L11.8628 9.50012L14.0316 10.7501V13.2501L11.8628 14.5001L9.69407 13.2501L9.70032 10.7501Z" fill="white"/>
-						</svg>
-                    </div>
-                    <div id="yt_ai_summary_header_track" class="yt_ai_summary_header_action_btn yt-summary-hover-el" data-hover-label="Jump to Current Time">
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M12 18.25C15.4518 18.25 18.25 15.4518 18.25 12C18.25 8.54822 15.4518 5.75 12 5.75C8.54822 5.75 5.75 8.54822 5.75 12C5.75 15.4518 8.54822 18.25 12 18.25Z" stroke="white" stroke-width="1.5"/>
-						<path d="M7.59995 11.3999H3.79995C3.46858 11.3999 3.19995 11.6685 3.19995 11.9999C3.19995 12.3313 3.46858 12.5999 3.79995 12.5999H7.59995C7.93132 12.5999 8.19995 12.3313 8.19995 11.9999C8.19995 11.6685 7.93132 11.3999 7.59995 11.3999Z" fill="white"/>
-						<path d="M20.1 11.3999H16.3C15.9686 11.3999 15.7 11.6685 15.7 11.9999C15.7 12.3313 15.9686 12.5999 16.3 12.5999H20.1C20.4314 12.5999 20.7 12.3313 20.7 11.9999C20.7 11.6685 20.4314 11.3999 20.1 11.3999Z" fill="white"/>
-						<path d="M11.3999 3.6V7.4C11.3999 7.73137 11.6685 8 11.9999 8C12.3313 8 12.5999 7.73137 12.5999 7.4V3.6C12.5999 3.26863 12.3313 3 11.9999 3C11.6685 3 11.3999 3.26863 11.3999 3.6Z" fill="white"/>
-						<path d="M11.3999 16.6V20.4C11.3999 20.7314 11.6685 21 11.9999 21C12.3313 21 12.5999 20.7314 12.5999 20.4V16.6C12.5999 16.2686 12.3313 16 11.9999 16C11.6685 16 11.3999 16.2686 11.3999 16.6Z" fill="white"/>
-						</svg>
-                    </div>
-                    <div id="yt_ai_summary_header_copy" class="yt_ai_summary_header_action_btn yt-summary-hover-el" data-hover-label="Copy Transcript\n(Plain Text)">
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M7 6.6V5C7 4.44772 7.44772 4 8 4H18C18.5523 4 19 4.44772 19 5V16C19 16.5523 18.5523 17 18 17H16.2308" stroke="white" stroke-width="1.5"/>
-						<path d="M15 6.75H6C5.30964 6.75 4.75 7.30964 4.75 8V19C4.75 19.6904 5.30964 20.25 6 20.25H15C15.6904 20.25 16.25 19.6904 16.25 19V8C16.25 7.30964 15.6904 6.75 15 6.75Z" stroke="white" stroke-width="1.5"/>
-						</svg>
-                    </div>
-                    <div id="yt_ai_summary_header_toggle" class="yt_ai_summary_header_action_btn">
+                <p class="yt_ai_summary_header_text"> YOUTUBE TRANSCRIPT</p>
+                 <div id="yt_ai_summary_header_toggle" class="yt_ai_summary_header_action_btn_top">
 						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M17.7215 10.8642C18.041 10.5446 18.041 10.0266 17.7215 9.70707C17.402 9.38754 16.8839 9.38754 16.5644 9.70707L17.7215 10.8642ZM7.43575 9.70707C7.11624 9.38754 6.5982 9.38754 6.27867 9.70707C5.95915 10.0266 5.95915 10.5446 6.27867 10.8642L7.43575 9.70707ZM12.81 15.7756L17.7215 10.8642L16.5644 9.70707L11.653 14.6185L12.81 15.7756ZM12.3472 14.6185L7.43575 9.70707L6.27867 10.8642L11.1901 15.7756L12.3472 14.6185ZM11.653 14.6185C11.8447 14.4268 12.1555 14.4268 12.3472 14.6185L11.1901 15.7756C11.6375 16.2229 12.3627 16.2229 12.81 15.7756L11.653 14.6185Z" fill="white"/>
 						</svg>
+                 </div>
+            </div>
+            <div id="menuSecondLine">
+            	<div class="yt_ai_summary_header_actions">
+                    <div id="yt_ai_summary_header_summary" class="yt_ai_summary_header_action_btn yt-summary-hover-el yt_ai_summary_icon" data-hover-label="Video Transcription">
+						<svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.83333 0.666687C2.19167 0.666687 1.66667 0.876687 1.18833 1.33169C0.733333 1.78669 0.5 2.34669 0.5 3.00002V17C0.5 17.6534 0.733333 18.2134 1.18833 18.6684C1.66667 19.1234 2.19167 19.3334 2.83333 19.3334H19.1667C19.75 19.3334 20.3333 19.1117 20.7883 18.645C21.2667 18.1667 21.5 17.6184 21.5 17V3.00002C21.5 2.38169 21.2667 1.83335 20.7883 1.35502C20.3333 0.888354 19.75 0.666687 19.1667 0.666687H2.83333ZM2.25 2.41669H19.75V17.5834H2.25V2.41669ZM5.16667 6.50002C4.81667 6.50002 4.54833 6.60502 4.32667 6.82669C4.105 7.04835 4 7.31669 4 7.66669V12.3334C4 12.6834 4.105 12.9517 4.32667 13.1734C4.54833 13.395 4.81667 13.5 5.16667 13.5H8.66667C8.98167 13.5 9.25 13.395 9.495 13.1734C9.72833 12.9517 9.83333 12.6834 9.83333 12.3334V11.1667H8.08333V11.75H5.75V8.25002H8.08333V8.83335H9.83333V7.66669C9.83333 7.31669 9.72833 7.04835 9.495 6.82669C9.25 6.60502 8.98167 6.50002 8.66667 6.50002H5.16667ZM13.3333 6.50002C13.0183 6.50002 12.75 6.60502 12.505 6.82669C12.2717 7.04835 12.1667 7.31669 12.1667 7.66669V12.3334C12.1667 12.6834 12.2717 12.9517 12.505 13.1734C12.75 13.395 13.0183 13.5 13.3333 13.5H16.8333C17.1833 13.5 17.4517 13.395 17.6733 13.1734C17.895 12.9517 18 12.6834 18 12.3334V11.1667H16.25V11.75H13.9167V8.25002H16.25V8.83335H18V7.66669C18 7.31669 17.895 7.04835 17.6733 6.82669C17.4517 6.60502 17.1833 6.50002 16.8333 6.50002H13.3333Z" fill="#F74332"/>
+</svg>
+                    </div>
+                    <div id="yt_ai_summary_header_ai_summary" class="yt_ai_summary_header_action_btn yt-summary-hover-el" data-hover-label="View AI Summary">
+					<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.1348 0.0175806C9.87174 0.00498689 9.60677 0.00883059 9.3379 0.0332056C7.11354 0.2339 5.33623 1.79408 4.60938 3.82031C2.89706 4.17684 1.43728 5.30485 0.671882 6.95703C-0.266005 8.98406 0.197291 11.3008 1.5879 12.9434C1.04027 14.6052 1.28563 16.4345 2.33204 17.9219C3.61822 19.7478 5.85658 20.5047 7.97462 20.1211C9.13967 21.4276 10.8476 22.1305 12.6621 21.9668C14.8865 21.7661 16.6638 20.206 17.3906 18.1797C19.103 17.8231 20.5638 16.696 21.3301 15.043C22.2682 13.0163 21.8054 10.6971 20.4141 9.05469C20.9607 7.39344 20.7139 5.56484 19.668 4.07813C18.3818 2.25224 16.1434 1.49531 14.0254 1.87891C13.033 0.766004 11.6469 0.089978 10.1348 0.0175806ZM10.0254 1.51367C10.9219 1.54885 11.755 1.87459 12.4316 2.42188C12.3186 2.47792 12.2001 2.51641 12.0899 2.58008L8.07618 4.89649C7.77018 5.07249 7.58018 5.39896 7.57618 5.75196L7.51758 11.2383L5.75001 10.1895V5.78516C5.75001 3.64916 7.3076 1.74225 9.4336 1.53125C9.63298 1.5115 9.83049 1.50603 10.0254 1.51367ZM15.125 3.25586C16.3986 3.26342 17.6399 3.82516 18.418 4.91016C19.0709 5.81959 19.3102 6.90199 19.1465 7.94727C19.0414 7.87735 18.9482 7.79415 18.8379 7.73047L14.8262 5.41406C14.5202 5.23806 14.1439 5.23521 13.8359 5.40821L9.05274 8.10352L9.07618 6.04883L12.8906 3.84766C13.5844 3.44716 14.3609 3.25133 15.125 3.25586ZM4.28321 5.47266C4.27521 5.59853 4.25001 5.7204 4.25001 5.84766V10.4805C4.25001 10.8335 4.43624 11.1598 4.74024 11.3398L9.46485 14.1367L7.67383 15.1426L3.85938 12.9395C2.00938 11.8715 1.13659 9.5671 2.01759 7.6211C2.47957 6.60069 3.29638 5.85358 4.28321 5.47266ZM14.3262 6.85742L18.1406 9.06055C19.9906 10.1285 20.8654 12.4329 19.9844 14.3789C19.5223 15.3996 18.7039 16.1465 17.7168 16.5273C17.7248 16.4017 17.75 16.2794 17.75 16.1523V11.5215C17.75 11.1675 17.5638 10.8402 17.2598 10.6602L12.5352 7.86328L14.3262 6.85742ZM11.0254 8.71094L12.9941 9.87891L12.9668 12.168L10.9746 13.2871L9.00587 12.1211L9.03126 9.83203L11.0254 8.71094ZM14.4824 10.7617L16.25 11.8105V16.2148C16.25 18.3508 14.6924 20.2578 12.5664 20.4688C11.45 20.5793 10.3921 20.2444 9.56837 19.5781C9.68143 19.5221 9.7999 19.4836 9.91016 19.4199L13.9238 17.1035C14.2298 16.9275 14.4198 16.601 14.4238 16.248L14.4824 10.7617ZM12.9473 13.8965L12.9238 15.9512L9.10938 18.1523C7.25938 19.2203 4.82704 18.8258 3.58204 17.0898C2.92915 16.1804 2.68976 15.098 2.85352 14.0527C2.95874 14.1228 3.05168 14.2057 3.16212 14.2695L7.17383 16.5859C7.47984 16.7619 7.85607 16.7648 8.16407 16.5918L12.9473 13.8965Z" fill="#6C6E73"/>
+</svg>
+                    </div>
+                    <div id="yt_ai_summary_header_summorize_by_time" class="yt_ai_summary_header_action_btn yt-summary-hover-el" data-hover-label="Summorize by time">
+						<svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 1H19V3H5V1ZM5 9V7H19V9H5ZM2 0.5C2.39782 0.5 2.77936 0.658035 3.06066 0.93934C3.34196 1.22064 3.5 1.60218 3.5 2C3.5 2.39782 3.34196 2.77936 3.06066 3.06066C2.77936 3.34196 2.39782 3.5 2 3.5C1.60218 3.5 1.22064 3.34196 0.93934 3.06066C0.658035 2.77936 0.5 2.39782 0.5 2C0.5 1.60218 0.658035 1.22064 0.93934 0.93934C1.22064 0.658035 1.60218 0.5 2 0.5ZM2 6.5C2.39782 6.5 2.77936 6.65804 3.06066 6.93934C3.34196 7.22064 3.5 7.60218 3.5 8C3.5 8.39782 3.34196 8.77936 3.06066 9.06066C2.77936 9.34196 2.39782 9.5 2 9.5C1.60218 9.5 1.22064 9.34196 0.93934 9.06066C0.658035 8.77936 0.5 8.39782 0.5 8C0.5 7.60218 0.658035 7.22064 0.93934 6.93934C1.22064 6.65804 1.60218 6.5 2 6.5ZM5 15V13H19V15H5ZM2 12.5C2.39782 12.5 2.77936 12.658 3.06066 12.9393C3.34196 13.2206 3.5 13.6022 3.5 14C3.5 14.3978 3.34196 14.7794 3.06066 15.0607C2.77936 15.342 2.39782 15.5 2 15.5C1.60218 15.5 1.22064 15.342 0.93934 15.0607C0.658035 14.7794 0.5 14.3978 0.5 14C0.5 13.6022 0.658035 13.2206 0.93934 12.9393C1.22064 12.658 1.60218 12.5 2 12.5Z" fill="#6C6E73"/>
+</svg>
                     </div>
                 </div>
             </div>
             <div id="yt_ai_summary_body" class="yt_ai_summary_body">
                 <div id="yt_ai_summary_lang_select" class="yt_ai_summary_lang_select"></div>
                 <div id="yt_ai_summary_text" class="yt_ai_summary_text"></div>
+            </div>
+            <div id="menuBottomLine">
+            	<div class="yt_ai_summary_header_actions">
+                    <div id="yt_ai_summary_header_copy" class="yt_ai_summary_header_action_btn yt-summary-hover-el yt_ai_summary_icon" data-hover-label="Copy">
+						<svg width="19" height="22" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 20H6V6H17M17 4H6C5.46957 4 4.96086 4.21071 4.58579 4.58579C4.21071 4.96086 4 5.46957 4 6V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H17C17.5304 22 18.0391 21.7893 18.4142 21.4142C18.7893 21.0391 19 20.5304 19 20V6C19 5.46957 18.7893 4.96086 18.4142 4.58579C18.0391 4.21071 17.5304 4 17 4ZM14 0H2C1.46957 0 0.960859 0.210714 0.585786 0.585786C0.210714 0.960859 0 1.46957 0 2V16H2V2H14V0Z" fill="#6C6E73"/>
+</svg>
+                    </div>
+                    <div id="yt_ai_summary_share" class="yt_ai_summary_header_action_btn yt-summary-hover-el" data-hover-label="Share">
+					<svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 14.08C14.24 14.08 13.56 14.38 13.04 14.85L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C15.7956 6 16.5587 5.68393 17.1213 5.12132C17.6839 4.55871 18 3.79565 18 3C18 2.20435 17.6839 1.44129 17.1213 0.87868C16.5587 0.316071 15.7956 0 15 0C14.2044 0 13.4413 0.316071 12.8787 0.87868C12.3161 1.44129 12 2.20435 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C2.20435 7 1.44129 7.31607 0.87868 7.87868C0.316071 8.44129 0 9.20435 0 10C0 10.7956 0.316071 11.5587 0.87868 12.1213C1.44129 12.6839 2.20435 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.16 16.34C12.11 16.55 12.08 16.77 12.08 17C12.08 18.61 13.39 19.91 15 19.91C16.61 19.91 17.92 18.61 17.92 17C17.92 16.2256 17.6124 15.4829 17.0648 14.9352C16.5171 14.3876 15.7744 14.08 15 14.08Z" fill="#6C6E73"/>
+</svg>
+                    </div>      
+                </div>
             </div>
         </div>`);
 
@@ -11194,20 +11190,85 @@ function insertSummaryBtn() {
             copyTranscript(videoId);
         })
 
+		// Example POST method implementation:
+		async function postData(url = "", data = {}) {
+			// Default options are marked with *
+			const response = await fetch(url, {
+				method: "GET", // *GET, POST, PUT, DELETE, etc.
+				mode: "cors", // no-cors, *cors, same-origin
+				cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+				credentials: "same-origin", // include, *same-origin, omit
+				headers: {
+					"Content-Type": "application/json",
+					'Access-Control-Allow-Origin':'*',
+					// 'Content-Type': 'application/x-www-form-urlencoded',
+				},
+				redirect: "follow", // manual, *follow, error
+				referrerPolicy: "strict-origin-when-cross-origin", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+				//body: JSON.stringify(data), // body data type must match "Content-Type" header
+			});
+			//console.log(response);
+			return response.json(); // parses JSON response into native JavaScript objects
+		}
         // Event Listener: AI Summary
-        document.querySelector("#yt_ai_summary_header_summary").addEventListener("click", (e) => {
+        document.querySelector("#yt_ai_summary_header_ai_summary").addEventListener("click", (e) => {
             e.stopPropagation();
-            const prompt = copyTranscriptAndPrompt();
-            setTimeout(() => {
-                chrome.runtime.sendMessage({ message: "setPrompt", prompt: prompt });
-                window.open("https://chat.openai.com/chat?ref=ytrans", "_blank");
-            }, 500);
+            document.querySelector("#yt_ai_summary_body").innerHTML = `
+    <svg class="yt_ai_summary_loading" style="display: block;width: 48px;margin: 40px auto;" width="48" height="48" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 36C59.9995 36 37 66 37 99C37 132 61.9995 163.5 100 163.5C138 163.5 164 132 164 99" stroke="#5C94FF" stroke-width="6"/>
+    </svg>`;
+            //const prompt = copyTranscriptAndPrompt();
+			const videoId = getSearchParam(window.location.href).v;
+
+			//fetch("https://sumorized.com/api/v1/summarize?id=" + videoId)
+			const URL = "https://sumorized.com/api/v1/summarize?id=" + videoId;
+			postData(URL, { answer: 42 }).then((result) => {
+				console.log(result); // JSON data parsed by `data.json()` call
+				document.querySelector("#yt_ai_summary_body").innerHTML = result.result;
+			});
+			// fetch(URL, {
+			// 	mode: 'no-cors',
+			// 	headers: {
+			// 		'Access-Control-Allow-Origin':'*'
+			// 	}
+			// })
+			// 	.then((response) => response.json())
+			// 	.then((result) => {
+			// 		console.log(result);
+			// 		document.querySelector("#yt_ai_summary_body").innerHTML = result;
+			// 	});
+
+
+			// setTimeout(() => {
+			// 	jQuery.ajax({
+			// 		url: "https://sumorized.com/api/v1/summarize?id=" + videoId,
+			// 		context: document.body
+			// 	}).done(function() {
+			// 		//$( this ).addClass( "done" );
+			// 	});
+            //     // chrome.runtime.sendMessage({ message: "setPrompt", prompt: prompt });
+            //     // window.open("https://chat.openai.com/chat?ref=ytrans", "_blank");
+			//
+            // }, 500);
         })
 
         // Event Listener: Jump to Current Timestamp
-        document.querySelector("#yt_ai_summary_header_track").addEventListener("click", (e) => {
+        document.querySelector("#yt_ai_summary_header_summorize_by_time").addEventListener("click", (e) => {
             e.stopPropagation();
-            scrollIntoCurrTimeDiv();
+			document.querySelector("#yt_ai_summary_body").innerHTML = `
+    <svg class="yt_ai_summary_loading" style="display: block;width: 48px;margin: 40px auto;" width="48" height="48" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 36C59.9995 36 37 66 37 99C37 132 61.9995 163.5 100 163.5C138 163.5 164 132 164 99" stroke="#5C94FF" stroke-width="6"/>
+    </svg>`;
+			//const prompt = copyTranscriptAndPrompt();
+			const videoId = getSearchParam(window.location.href).v;
+
+			//fetch("https://sumorized.com/api/v1/summarize?id=" + videoId)
+			const URL = "https://sumorized.com/api/v1/summarize?id=" + videoId + "&time=1";
+			postData(URL, { answer: 42 }).then((result) => {
+				console.log(result); // JSON data parsed by `data.json()` call
+				document.querySelector("#yt_ai_summary_body").innerHTML = result.result;
+			});
+            //scrollIntoCurrTimeDiv();
         })
 
         // Event Listener: Toggle Transcript Body
@@ -11256,7 +11317,11 @@ function sanitizeWidget() {
     document.querySelector("#yt_ai_summary_body").classList.toggle("yt_ai_summary_body_show");
     document.querySelector("#yt_ai_summary_header_copy").classList.toggle("yt_ai_summary_header_icon_show");
     document.querySelector("#yt_ai_summary_header_summary").classList.toggle("yt_ai_summary_header_icon_show");
-    document.querySelector("#yt_ai_summary_header_track").classList.toggle("yt_ai_summary_header_icon_show");
+	//document.querySelector("#yt_ai_summary_footer_summary").classList.toggle("yt_ai_summary_header_icon_show");
+	document.querySelector("#yt_ai_summary_header_summorize_by_time").classList.toggle("yt_ai_summary_header_icon_show");
+	document.querySelector("#yt_ai_summary_header_ai_summary").classList.toggle("yt_ai_summary_header_icon_show");
+    document.querySelector("#yt_ai_summary_share").classList.toggle("yt_ai_summary_header_icon_show");
+	//document.querySelector("#yt_ai_summary_footer_track").classList.toggle("yt_ai_summary_header_icon_show");
     document.querySelector("#yt_ai_summary_header_toggle").classList.toggle("yt_ai_summary_header_toggle_rotate");
 }
 
@@ -11330,21 +11395,23 @@ function evtListenerOnTimestamp() {
 }
 
 function copyTranscript(videoId) {
-    let contentBody = "";
-    const url = `https://www.youtube.com/watch?v=${videoId}`;
-    contentBody += `${document.title}\n`;
-    contentBody += `${url}\n\n`;
-    // contentBody += `![](${url})\n`;
-    contentBody += `Transcript:\n`;
-    Array.from(document.getElementById("yt_ai_summary_text").children).forEach(el => {
-        if (!el) { return; }
-        if (el.children.length < 2) { return; }
-        const timestamp = el.querySelector(".yt_ai_summary_transcript_text_timestamp").innerText;
-        const timestampHref = el.querySelector(".yt_ai_summary_transcript_text_timestamp").getAttribute("data-timestamp-href");
-        const text = el.querySelector(".yt_ai_summary_transcript_text").innerText;
-        // contentBody += `- [${timestamp}](${`https://www.youtube.com${timestampHref}`}) ${text}\n`;
-        contentBody += `(${timestamp}) ${text}\n`;
-    })
+    // let contentBody = "";
+    // const url = `https://www.youtube.com/watch?v=${videoId}`;
+    // contentBody += `${document.title}\n`;
+    // contentBody += `${url}\n\n`;
+    // // contentBody += `![](${url})\n`;
+    // contentBody += `Transcript:\n`;
+    // Array.from(document.getElementById("yt_ai_summary_text").children).forEach(el => {
+    //     if (!el) { return; }
+    //     if (el.children.length < 2) { return; }
+    //     const timestamp = el.querySelector(".yt_ai_summary_transcript_text_timestamp").innerText;
+    //     const timestampHref = el.querySelector(".yt_ai_summary_transcript_text_timestamp").getAttribute("data-timestamp-href");
+    //     const text = el.querySelector(".yt_ai_summary_transcript_text").innerText;
+    //     // contentBody += `- [${timestamp}](${`https://www.youtube.com${timestampHref}`}) ${text}\n`;
+    //     contentBody += `(${timestamp}) ${text}\n`;
+    // })
+	let contentBody = document.getElementById("yt_ai_summary_body").textContent;
+	console.log(contentBody);
     copyTextToClipboard(contentBody);
 }
 
