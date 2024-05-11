@@ -1,14 +1,19 @@
-#menuSecondLine, #menuBottomLine{
+#menuSecondLine, #menuBottomLine {
     width: 100%;
     padding: 5px 0;
 }
+
 .yt_ai_summary_container {
     border: 1px solid rgba(183, 191, 196, 0.4);
     background-color: #fff;
     padding: 10px;
     border-radius: 10px;
-
     font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.yt_ai_summary_header_text {
+    color: #fff;
 }
 
 .yt_ai_summary_header {
@@ -44,10 +49,10 @@
 
 @keyframes rotation {
     from {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-      transform: rotate(359deg);
+        transform: rotate(359deg);
     }
 }
 
@@ -87,11 +92,13 @@
     background-color: #F75300;
     transition: background-color 0.5s cubic-bezier(0.05, 0, 0, 1) 0s;
 }
+
 .yt_ai_summary_header_action_btn svg {
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
+
 .yt_ai_summary_header_action_btn:active {
     background-color: rgba(0, 0, 0, 0.2);
     transition: background-color 0.5s cubic-bezier(0.05, 0, 0, 1) 0s;
@@ -112,7 +119,7 @@
 }
 
 .yt_ai_summary_body {
-    overflow-y:scroll;
+    overflow-y: scroll;
     padding: 10px;
     /*background-color: #F5F5F5;*/
     border-radius: 10px;
@@ -133,6 +140,7 @@
     border-radius: 6px;
     overflow-y: scroll;
     max-height: 500px;
+    padding-left: 0;
 }
 
 .yt_ai_summary_lang_select {
@@ -144,7 +152,7 @@
     margin-bottom: 5px;
     border: 0;
     font-size: 12px;
-    overflow-x:auto;
+    overflow-x: auto;
 }
 
 .yt_ai_summary_text::-webkit-scrollbar {
@@ -223,7 +231,7 @@
 }
 
 .yt_ai_summary_transcript_text_timestamp {
-    color:#065fd4;
+    color: #065fd4;
     text-decoration: none;
     cursor: pointer;
     margin-right: 16px;

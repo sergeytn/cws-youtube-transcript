@@ -11320,7 +11320,7 @@ function sanitizeWidget() {
 	//document.querySelector("#yt_ai_summary_footer_summary").classList.toggle("yt_ai_summary_header_icon_show");
 	document.querySelector("#yt_ai_summary_header_summorize_by_time").classList.toggle("yt_ai_summary_header_icon_show");
 	document.querySelector("#yt_ai_summary_header_ai_summary").classList.toggle("yt_ai_summary_header_icon_show");
-    document.querySelector("#yt_ai_summary_share").classList.toggle("yt_ai_summary_header_icon_show");
+    //document.querySelector("#yt_ai_summary_share").classList.toggle("yt_ai_summary_header_icon_show");
 	//document.querySelector("#yt_ai_summary_footer_track").classList.toggle("yt_ai_summary_header_icon_show");
     document.querySelector("#yt_ai_summary_header_toggle").classList.toggle("yt_ai_summary_header_toggle_rotate");
 }
