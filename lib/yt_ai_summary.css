@@ -1,3 +1,14 @@
+.svg_container{
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    display: flex;
+}
+.yt_ai_summary_header_action_btn svg.active {
+    fill: #F74332;
+}
 #menuSecondLine, #menuBottomLine {
     width: 100%;
     padding: 5px 0;
@@ -119,7 +130,7 @@
 }
 
 .yt_ai_summary_body {
-    overflow-y: scroll;
+    overflow-y: hidden;
     padding: 10px;
     /*background-color: #F5F5F5;*/
     border-radius: 10px;
@@ -141,6 +152,7 @@
     overflow-y: scroll;
     max-height: 500px;
     padding-left: 0;
+    scrollbar-color: #F74332 rgba(183, 191, 196, 0.4);
 }
 
 .yt_ai_summary_lang_select {
