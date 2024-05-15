@@ -34,7 +34,6 @@
     font-weight: bold;
     user-select: none;
     cursor: pointer;
-    /*background-color: #FC7D00;*/
     background: linear-gradient(0deg, #FF5E3B, #EE0100);
     color: #fff;
     padding: 7px 15px 7px 15px;
@@ -99,8 +98,7 @@
 }
 
 .yt_ai_summary_header_action_btn:hover {
-    background-color: #F75300;
-    transition: background-color 0.5s cubic-bezier(0.05, 0, 0, 1) 0s;
+    background-color: rgba(255, 139, 139, 0.3)
 }
 
 .yt_ai_summary_header_action_btn svg {
@@ -110,8 +108,7 @@
 }
 
 .yt_ai_summary_header_action_btn:active {
-    background-color: rgba(0, 0, 0, 0.2);
-    transition: background-color 0.5s cubic-bezier(0.05, 0, 0, 1) 0s;
+    background-color: rgba(255, 139, 139, 0.3)
 }
 
 #yt_ai_summary_header_copy, #yt_ai_summary_share, #yt_ai_summary_header_ai_summary, #yt_ai_summary_header_summorize_by_time, #yt_ai_summary_header_track, #yt_ai_summary_header_summary, #yt_ai_summary_header_track, #yt_ai_summary_footer_summary, #yt_ai_summary_footer_track {
@@ -145,7 +142,6 @@
     padding: 12px;
     font-size: 14px;
     line-height: 1.2em;
-    background-color: #fff;
     padding: 15px;
     border-radius: 6px;
     overflow-y: scroll;
@@ -167,9 +163,9 @@
 }
 
 .yt_ai_summary_text::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
     border-radius: 4px;
-    background-color: #E5DFDF;
+    background-color: rgba(255, 139, 139, 0.4)
 }
 
 .yt_ai_summary_text::-webkit-scrollbar-track {
@@ -177,19 +173,19 @@
 }
 
 .yt_ai_summary_text::-webkit-scrollbar-thumb {
-    background: #FC7D00;
+    background: #F74332;
     border-radius: 4px;
 }
 
 .yt_ai_summary_text::-webkit-scrollbar-thumb:hover {
-    background: #FC7D00;
+    background: #F74332;
     border-radius: 4px;
 }
 
 .yt_ai_summary_lang_select::-webkit-scrollbar {
-    height: 6px;
+    height: 4px;
     border-radius: 4px;
-    background-color: #EFEFEF;
+    background-color: rgba(255, 139, 139, 0.4)
 }
 
 .yt_ai_summary_lang_select::-webkit-scrollbar-track {
@@ -197,12 +193,12 @@
 }
 
 .yt_ai_summary_lang_select::-webkit-scrollbar-thumb {
-    background: #E0D6D6;
+    background: #F74332;
     border-radius: 4px;
 }
 
 .yt_ai_summary_lang_select::-webkit-scrollbar-thumb:hover {
-    background: #E0D6D6;
+    background: #F74332;
     border-radius: 4px;
 }
 
@@ -212,7 +208,7 @@
     align-items: center;
     border-radius: 10px;
     padding: 6px 10px;
-    background-color: #DFDFDF;
+    background-color: rgba(183, 191, 196, 0.3)
     white-space: nowrap;
     min-width: fit-content;
     cursor: pointer;
@@ -220,14 +216,15 @@
     font-size: 14px;
     border: none;
     color: #fff;
+
 }
 
 .yt_ai_summary_lang_select button:hover {
-
+    background-color: rgba(255, 139, 139, 0.3)
 }
 
 .yt_ai_summary_lange_selected {
-    background-color: #C3B0B0 !important;
+    background-color: rgba(255, 139, 139, 0.3)
 }
 
 .yt_ai_summary_transcript_text_segment, .yt_ai_summary_transcript_text {
