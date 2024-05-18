@@ -11225,7 +11225,7 @@ function insertSummaryBtn() {
 			//fetch("https://sumorized.com/api/v1/summarize?id=" + videoId)
 			const URL = "https://sumorized.com/api/v1/summarize?id=" + videoId;
 			postData(URL, { answer: 42 }).then((result) => {
-				console.log(result); // JSON data parsed by `data.json()` call
+				//console.log(result); // JSON data parsed by `data.json()` call
 				document.querySelector("#yt_ai_summary_body").innerHTML = '<div id="yt_ai_summary_text" class="yt_ai_summary_text">' + result.result + '</div>';
 			});
 			// fetch(URL, {
@@ -11267,7 +11267,7 @@ function insertSummaryBtn() {
 			//fetch("https://sumorized.com/api/v1/summarize?id=" + videoId)
 			const URL = "https://sumorized.com/api/v1/summarize?id=" + videoId + "&time=1";
 			postData(URL, { answer: 42 }).then((result) => {
-				console.log(result); // JSON data parsed by `data.json()` call
+				//console.log(result); // JSON data parsed by `data.json()` call
 				document.querySelector("#yt_ai_summary_body").innerHTML = '<div id="yt_ai_summary_text" class="yt_ai_summary_text">' + result.result + '</div>';
 			});
             //scrollIntoCurrTimeDiv();
@@ -11479,7 +11479,7 @@ function waitForElm(selector) {
 let oldHref = "";
 
 
-window.onload = async () => {
+//window.onload = async () => {
         
     if (window.location.hostname === "www.youtube.com") {
         
@@ -11500,58 +11500,58 @@ window.onload = async () => {
 
     }
 
-    if (window.location.hostname === "chat.openai.com") {
-        const promptArea = document.querySelector('#prompt-textarea');
-        let sendBtn = document.querySelector('[data-testid="send-button"]');
-        if (!sendBtn) sendBtn = promptArea.parentNode.querySelector('button');
-
-        if (promptArea && sendBtn && window.location.search === "?ref=ytrans") {
-            chrome.runtime.sendMessage({ message: "getPrompt" }, async (response) => {
-                console.log(response, promptArea, sendBtn);
-                console.log(response.prompt);
-
-                if (!response.prompt) {
-                    console.log('return');
-                    return;
-                }
-
-                setTimeout(() => {
-                    promptArea.value = response.prompt;
-                    promptArea.style.height = promptArea.scrollHeight + "px",
-                    promptArea.focus();
-                    promptArea.dispatchEvent(new Event("input", { bubbles: true }));
-
-                    sendBtn.disabled = false;
-                    sendBtn.click();
-
-                    setTimeout(() => {
-                        const downBtn = document.querySelector('[role="presentation"] button.cursor-pointer');
-                        console.log(downBtn);
-                        if (!downBtn) return;
-                        downBtn.click();
-                    }, 2000);
-                }, 1500);
-            });
-        }
-        /*
-        if (document.getElementsByTagName("textarea")[0]) {
-            document.getElementsByTagName("textarea")[0].focus();
-            // If search query is "?ref=ytrans"
-            if (window.location.search === "?ref=ytrans") {
-                // get prompt from background.js
-                chrome.runtime.sendMessage({ message: "getPrompt" }, (response) => {
-                    document.getElementsByTagName("textarea")[0].value = response.prompt;
-                    if (response.prompt !== "") {
-                        document.getElementsByTagName("textarea")[0].focus();
-                        document.getElementsByTagName("button")[document.getElementsByTagName("button").length-1].click();
-                    }
-                });
-            }
-        }
-        */
-    }
+    // if (window.location.hostname === "chat.openai.com") {
+    //     const promptArea = document.querySelector('#prompt-textarea');
+    //     let sendBtn = document.querySelector('[data-testid="send-button"]');
+    //     if (!sendBtn) sendBtn = promptArea.parentNode.querySelector('button');
+	//
+    //     if (promptArea && sendBtn && window.location.search === "?ref=ytrans") {
+    //         chrome.runtime.sendMessage({ message: "getPrompt" }, async (response) => {
+    //             console.log(response, promptArea, sendBtn);
+    //             console.log(response.prompt);
+	//
+    //             if (!response.prompt) {
+    //                 console.log('return');
+    //                 return;
+    //             }
+	//
+    //             setTimeout(() => {
+    //                 promptArea.value = response.prompt;
+    //                 promptArea.style.height = promptArea.scrollHeight + "px",
+    //                 promptArea.focus();
+    //                 promptArea.dispatchEvent(new Event("input", { bubbles: true }));
+	//
+    //                 sendBtn.disabled = false;
+    //                 sendBtn.click();
+	//
+    //                 setTimeout(() => {
+    //                     const downBtn = document.querySelector('[role="presentation"] button.cursor-pointer');
+    //                     console.log(downBtn);
+    //                     if (!downBtn) return;
+    //                     downBtn.click();
+    //                 }, 2000);
+    //             }, 1500);
+    //         });
+    //     }
+    //     /*
+    //     if (document.getElementsByTagName("textarea")[0]) {
+    //         document.getElementsByTagName("textarea")[0].focus();
+    //         // If search query is "?ref=ytrans"
+    //         if (window.location.search === "?ref=ytrans") {
+    //             // get prompt from background.js
+    //             chrome.runtime.sendMessage({ message: "getPrompt" }, (response) => {
+    //                 document.getElementsByTagName("textarea")[0].value = response.prompt;
+    //                 if (response.prompt !== "") {
+    //                     document.getElementsByTagName("textarea")[0].focus();
+    //                     document.getElementsByTagName("button")[document.getElementsByTagName("button").length-1].click();
+    //                 }
+    //             });
+    //         }
+    //     }
+    //     */
+    // }
     
-}
+//}
 })();
 
 /******/ })()
