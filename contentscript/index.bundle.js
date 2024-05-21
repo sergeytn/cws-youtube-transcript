@@ -11120,7 +11120,7 @@ function insertSummaryBtn() {
 					</defs>
 					</svg>
                 </a>
-                <p class="yt_ai_summary_header_text"> YOUTUBE TRANSCRIPT</p>
+                <p class="yt_ai_summary_header_text">YOUTUBE TRANSCRIPT & SUMMARY</p>
                  <div id="yt_ai_summary_header_toggle" class="yt_ai_summary_header_action_btn_top">
 						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M17.7215 10.8642C18.041 10.5446 18.041 10.0266 17.7215 9.70707C17.402 9.38754 16.8839 9.38754 16.5644 9.70707L17.7215 10.8642ZM7.43575 9.70707C7.11624 9.38754 6.5982 9.38754 6.27867 9.70707C5.95915 10.0266 5.95915 10.5446 6.27867 10.8642L7.43575 9.70707ZM12.81 15.7756L17.7215 10.8642L16.5644 9.70707L11.653 14.6185L12.81 15.7756ZM12.3472 14.6185L7.43575 9.70707L6.27867 10.8642L11.1901 15.7756L12.3472 14.6185ZM11.653 14.6185C11.8447 14.4268 12.1555 14.4268 12.3472 14.6185L11.1901 15.7756C11.6375 16.2229 12.3627 16.2229 12.81 15.7756L11.653 14.6185Z" fill="white"/>
