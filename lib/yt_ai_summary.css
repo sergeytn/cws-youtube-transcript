@@ -11,7 +11,7 @@
 }
 #menuSecondLine, #menuBottomLine {
     width: 100%;
-    padding: 5px 0;
+    padding: 0;
 }
 
 .yt_ai_summary_container {
@@ -49,7 +49,6 @@
     display: flex;
     justify-content: left;
     align-items: center;
-    gap: 2px;
 }
 
 .yt_ai_summary_loading {
@@ -70,6 +69,11 @@
     height: 24px;
     padding: 8px;
     border-radius: 10px;
+    background-color: rgba(183, 191, 196, 0.3);
+    margin: 7px 7px 7px 0;
+}
+
+.yt_ai_summary_header_action_btn {
     background-color: rgba(255, 139, 139, 0.3);
 }
 
@@ -90,7 +94,7 @@
 }
 
 .yt_ai_summary_icon:hover {
-
+    fill: #F74332;
 }
 
 .yt_ai_summary_icon:active {
