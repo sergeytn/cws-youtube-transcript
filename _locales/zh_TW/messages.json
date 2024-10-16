@@ -1,0 +1,8 @@
+{
+    "appName": {
+        "message": "視頻摘要生成器"
+    },
+    "appDesc": {
+        "message": "YouTube 視頻摘要生成器：使用 ChatGPT 獲取 YouTube 視頻的摘要和轉錄。"
+    }
+}
