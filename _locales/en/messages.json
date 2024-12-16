@@ -1,8 +1,8 @@
 {
     "appName": {
-        "message": "Youtube New"
+        "message": "Youtube Video to Text"
     },
     "appDesc": {
-        "message": "Youtube Video Transcript and Video Summary: YouTube video to text transcript, YouTube summary with ChatGPT."
+        "message": "Turn YouTube to text easily. Extract youtube transcripts for study or research. Fast YouTube Subtitles extraction."
     }
 }

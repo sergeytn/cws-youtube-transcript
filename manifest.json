@@ -15,7 +15,7 @@
     {
       "matches": ["https://www.youtube.com/*", "https://chatgpt.com/*"],
       "js": ["scripts/index.bundle.js"],
-      "css": ["scripts/yt_ai_summary.css"],
+      "css": ["scripts/youtube.css"],
       "all_frames": false
     }
   ],
