@@ -11236,42 +11236,10 @@
                 document.querySelector("#yt_ai_summary_header_ai_summary").addEventListener("click", (e) => {
                     e.stopPropagation();
 					let prompt = copyTranscriptAndPrompt();
-                   // prompt = 'test prompt';
 					setTimeout(() => {
 						chrome.runtime.sendMessage({ message: "setPrompt", prompt: prompt });
-                        //const port = chrome.runtime.connect();
-                        //port.postMessage({question: "test prompt"})
 						window.open("https://chatgpt.com/", "_blank");
-					}, 500);
-                  /*  document.querySelector("#yt_ai_summary_body").innerHTML = `
-    <svg class="yt_ai_summary_loading" style="display: block;width: 48px;margin: 40px auto;" width="48" height="48" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M100 36C59.9995 36 37 66 37 99C37 132 61.9995 163.5 100 163.5C138 163.5 164 132 164 99" stroke="#5C94FF" stroke-width="6"/>
-    </svg>`;
-                    //const prompt = copyTranscriptAndPrompt();
-                    const videoId = getSearchParam(window.location.href).v;
-
-                    const URL = "https://sumorized.com/api/v1/summarize?id=" + videoId;
-                    postData(URL, {answer: 42}).then((result) => {
-                        //console.log(result); // JSON data parsed by `data.json()` call
-                        document.querySelector("#yt_ai_summary_body").innerHTML = '<div id="yt_ai_summary_text" class="yt_ai_summary_text">' + result.result + '</div>';
-                    });
-
-                })
-
-                // Event Listener: Jump to Current Timestamp
-                document.querySelector("#yt_ai_summary_header_summorize_by_time").addEventListener("click", (e) => {
-                    e.stopPropagation();
-                    document.querySelector("#yt_ai_summary_body").innerHTML = `
-    <svg class="yt_ai_summary_loading" style="display: block;width: 48px;margin: 40px auto;" width="48" height="48" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M100 36C59.9995 36 37 66 37 99C37 132 61.9995 163.5 100 163.5C138 163.5 164 132 164 99" stroke="#5C94FF" stroke-width="6"/>
-    </svg>`;
-                    const videoId = getSearchParam(window.location.href).v;
-
-                    const URL = "https://sumorized.com/api/v1/summarize?id=" + videoId + "&time=1";
-                    postData(URL, {answer: 42}).then((result) => {
-                        document.querySelector("#yt_ai_summary_body").innerHTML = '<div id="yt_ai_summary_text" class="yt_ai_summary_text">' + result.result + '</div>';
-                    });
-                */
+					}, 2000);
                 })
                 document.querySelector("#yt_ai_summary_header_summary").addEventListener("click", async (e) => {
                     e.stopPropagation();
@@ -11459,6 +11427,7 @@
             const text = getChunckedTranscripts(textData, textData);
             const prompt = getSummaryPrompt(text);
             copyTextToClipboard(prompt);
+            console.log(prompt);
             return prompt;
         }
 
@@ -11515,7 +11484,7 @@ window.onload = async () => {
             const promptArea = document.querySelector('p.placeholder');
            //const promptArea = document.querySelector('textarea.text-token-text-primary');
 
-            let sendBtn = document.querySelector('[data-testid="send-button"]');
+            let sendBtn = document.querySelector('[data-testid="composer-speech-button"]');
            // if (!sendBtn) sendBtn = promptArea.parentNode.querySelector('button');
             console.log('!!!',promptArea , sendBtn);
             if (promptArea && sendBtn) {
