@@ -6510,8 +6510,8 @@
                 setTimeout(function () {
                     console['log']('chatGPT\x20here');
                     const I = document['querySelector']('p.placeholder');
-                    let J = document['querySelector']('[data-testid=\x22send-button\x22]');
-                    console['log']('!!!', I, J);
+                    let J = document['querySelector']('[data-testid="composer-speech-button"]');
+
                     if (I && J) {
                         console['log']('OK!!!!!!!!');
                         chrome['runtime']['sendMessage']({ 'message': 'getPrompt' }, async K => {
